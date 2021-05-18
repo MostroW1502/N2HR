@@ -1,0 +1,142 @@
+﻿<Window x:Class="NES20HeaderRepair.ROMDatabaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NES20HeaderRepair"
+        mc:Ignorable="d"
+        Title="ROMDatabaseEntry" 
+        Height="500" 
+        Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".6*"/>
+            <RowDefinition Height=".4*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="lblSize" Content="Size:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="lblCRC32" Content="CRC32:" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="lblSHA1" Content="SHA1:" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="lblSUM16" Content="SUM16:" Grid.Row="0" Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Label x:Name="lblPRGROM" Content="PRG ROM:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtPRGROMSize" Grid.Row="1" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGROM.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtPRGROMCRC32" Grid.Row="1" Grid.Column="2" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGROM.CRC32AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtPRGROMSHA1" Grid.Row="1" Grid.Column="3" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGROM.SHA1AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtPRGROMSUM16" Grid.Row="1" Grid.Column="4" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGROM.SUM16AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblCHRROM" Content="CHR ROM:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtCHRROMSize" Grid.Row="2" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRROM.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtCHRROMCRC32" Grid.Row="2" Grid.Column="2" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRROM.CRC32AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtCHRROMSHA1" Grid.Row="2" Grid.Column="3" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRROM.SHA1AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtCHRROMSUM16" Grid.Row="2" Grid.Column="4" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRROM.SUM16AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblROM" Content="ROM:" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtROMSize" Grid.Row="3" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding ROM.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtROMCRC32" Grid.Row="3" Grid.Column="2" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding ROM.CRC32AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtROMSHA1" Grid.Row="3" Grid.Column="3" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding ROM.SHA1AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblPRGRAM" Content="PRG RAM:" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtPRGRAMSize" Grid.Row="4" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGRAM.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblPRGNVRAM" Content="PRG NVRAM:" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtPRGNVRAMSize" Grid.Row="5" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGNVRAM.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblCHRRAM" Content="CHR RAM:" Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtCHRRAMSize" Grid.Row="6" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRRAM.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblCHRNVRAM" Content="CHR NVRAM:" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtCHRNVRAMSize" Grid.Row="7" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRNVRAM.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblTrainer" Content="TRAINER:" Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtTrainerSize" Grid.Row="8" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding TRAINER.Size, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtTrainerCRC32" Grid.Row="8" Grid.Column="2" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding TRAINER.CRC32AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            <TextBox x:Name="txtTrainerSHA1" Grid.Row="8" Grid.Column="3" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding TRAINER.SHA1AsString, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblPCB" Content="PCB:" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Label x:Name="lblMapper" Content="Mapper:" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtMapper" Grid.Row="1" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PCB.Mapper, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblSubMapper" Content="SubMapper:" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtSubMapper" Grid.Row="2" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PCB.SubMapper, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblMirroring" Content="Mirroring:" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtMirroring" Grid.Row="3" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PCB.Mirroring, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblBattery" Content="Battery:" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtBattery" Grid.Row="4" Grid.Column="1" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PCB.Battery, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblConsole" Content="Console:" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Label x:Name="lblConsoleType" Content="Type:" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtConsoleType" Grid.Row="1" Grid.Column="3" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Console.Type, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblConsoleRegion" Content="Region:" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtConsoleRegion" Grid.Row="2" Grid.Column="3" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Console.Region, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblVS" Content="VS:" Grid.Row="2" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            
+            <Label x:Name="lblVSPPU" Content="PPU:" Grid.Row="3" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtVSPPU" Grid.Row="3" Grid.Column="5" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding VS.PPU, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+
+            <Label x:Name="lblVSHardware" Content="Hardware:" Grid.Row="4" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtVSHardware" Grid.Row="4" Grid.Column="5" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding VS.Hardware, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+            
+            <Label x:Name="lblExpansion" Content="Expansion:" Grid.Row="0" Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            <Label x:Name="lblExpansionType" Content="Type:" Grid.Row="1" Grid.Column="4" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtExpansionType" Grid.Row="1" Grid.Column="5" Margin="1,0,1,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Expansion.Type, Mode=OneWay}" TextWrapping="NoWrap" IsReadOnly="True"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="btnClose" Content="_Close" Grid.Column="1" Margin="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,133 @@
+﻿<Window x:Class="NES20HeaderRepair.ConverterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NES20HeaderRepair"
+        mc:Ignorable="d"
+        Title="Converter"
+        Height="600"
+        Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height=".2*"/>
+            <RowDefinition Height=".1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="FileLabel" Grid.Column="0" Content="FileName:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="lblFileName" Grid.Column="1" Content="[FILENAME]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="lblHeader" Grid.Column="0" Content="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="lblDatabase" Grid.Column="1" Content="Database" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Label x:Name="lblPRGROM" Content="PRG ROM" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="HeaderPRGSizeLabel" Grid.Row="0" Grid.Column="0" Content="Size:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="HeaderPRGCRC32Label" Grid.Row="1" Grid.Column="0" Content="CRC32:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="HeaderPRGSHA1Label" Grid.Row="2" Grid.Column="0" Content="SHA1:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="HeaderPRGSUM16Label" Grid.Row="3" Grid.Column="0" Content="SUM16:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            
+            <Label x:Name="lblHeaderPRGSize" Grid.Row="0" Grid.Column="1" Content="[Size]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblHeaderPRGCRC32" Grid.Row="1" Grid.Column="1" Content="[CRC32]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblHeaderPRGSHA1" Grid.Row="2" Grid.Column="1" Content="[SHA1]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblHeaderPRGSUM16" Grid.Row="3" Grid.Column="1" Content="[SUM16]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Label x:Name="DatabasePRGSizeLabel" Grid.Row="0" Grid.Column="2" Content="Size:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="DatabasePRGCRC32Label" Grid.Row="1" Grid.Column="2" Content="CRC32:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="DatabasePRGSHA1Label" Grid.Row="2" Grid.Column="2" Content="SHA1:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="DatabasePRGSUM16Label" Grid.Row="3" Grid.Column="2" Content="SUM16:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            
+            <Label x:Name="lblDatabasePRGSize" Grid.Row="0" Grid.Column="3" Content="[Size]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblDatabasePRGCRC32" Grid.Row="1" Grid.Column="3" Content="[CRC32]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblDatabasePRGSHA1" Grid.Row="2" Grid.Column="3" Content="[SHA1]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblDatabasePRGSUM16" Grid.Row="3" Grid.Column="3" Content="[SUM16]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="4">
+            <Label x:Name="lblCHRROM" Content="CHR ROM" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height=".2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="HeaderCHRSizeLabel" Grid.Row="0" Grid.Column="0" Content="Size:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="HeaderCHRCRC32Label" Grid.Row="1" Grid.Column="0" Content="CRC32:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="HeaderCHRSHA1Label" Grid.Row="2" Grid.Column="0" Content="SHA1:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="HeaderCHRSUM16Label" Grid.Row="3" Grid.Column="0" Content="SUM16:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+            <Label x:Name="lblHeaderCHRSize" Grid.Row="0" Grid.Column="1" Content="[Size]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblHeaderCHRCRC32" Grid.Row="1" Grid.Column="1" Content="[CRC32]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblHeaderCHRSHA1" Grid.Row="2" Grid.Column="1" Content="[SHA1]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblHeaderCHRSUM16" Grid.Row="3" Grid.Column="1" Content="[SUM16]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+            <Label x:Name="DatabaseCHRSizeLabel" Grid.Row="0" Grid.Column="2" Content="Size:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="DatabaseCHRCRC32Label" Grid.Row="1" Grid.Column="2" Content="CRC32:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="DatabaseCHRSHA1Label" Grid.Row="2" Grid.Column="2" Content="SHA1:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+            <Label x:Name="DatabaseCHRSUM16Label" Grid.Row="3" Grid.Column="2" Content="SUM16:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+
+            <Label x:Name="lblDatabaseCHRSize" Grid.Row="0" Grid.Column="3" Content="[Size]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblDatabaseCHRCRC32" Grid.Row="1" Grid.Column="3" Content="[CRC32]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblDatabaseCHRSHA1" Grid.Row="2" Grid.Column="3" Content="[SHA1]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Label x:Name="lblDatabaseCHRSUM16" Grid.Row="3" Grid.Column="3" Content="[SUM16]" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnClose" Content="_Close" Grid.Column="2" Margin="10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Grid>
+    </Grid>
+</Window>

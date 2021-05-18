@@ -1,0 +1,123 @@
+﻿<Window x:Class="NES20HeaderRepair.HeaderEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NES20HeaderRepair"
+        mc:Ignorable="d"
+        Title="NES 2.0 Header Editor" 
+        Width="620" 
+        Height="680"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition MaxHeight="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label x:Name="lblIdentificationString" Grid.Row="0" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Identification String:"/>
+            <TextBox x:Name="txtIdentificationString" Grid.Row="0" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding IdentificationString, Mode=OneWay}" IsTabStop="False" IsReadOnly="True" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblPRGROMSize" Grid.Row="1" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="PRG ROM Size:" />
+            <TextBox x:Name="txtPRGROMSize" Grid.Row="1" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGROMSize}" TextWrapping="NoWrap"/>
+            <TextBox x:Name="txtPRGROMBankCount" Grid.Row="1" Grid.Column="3" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGROMBankCount}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblCHRROMSize" Grid.Row="2" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="CHR ROM Size:" />
+            <TextBox x:Name="txtCHRROMSize" Grid.Row="2" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRROMSize}" TextWrapping="NoWrap"/>
+            <TextBox x:Name="txtCHRROMBankCount" Grid.Row="2" Grid.Column="3" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRROMBankCount}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblPRGRAM" Grid.Row="3" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="PRG RAM:"/>
+            <TextBox x:Name="txtPRGRAMSize" Grid.Row="3" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGRAMSize}" TextWrapping="NoWrap"/>
+            <TextBox x:Name="txtPRGRAMShiftCount" Grid.Row="3" Grid.Column="3" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGRAMShiftCount}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblPRGNVRAM" Grid.Row="4" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="PRG NVRAM:"/>
+            <TextBox x:Name="txtPRGNVRAMSize" Grid.Row="4" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGNVRAMSize}" TextWrapping="NoWrap"/>
+            <TextBox x:Name="txtPRGNVRAMShiftCount" Grid.Row="4" Grid.Column="3" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding PRGNVRAMShiftCount}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblCHRRAM" Grid.Row="5" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="CHR RAM:"/>
+            <TextBox x:Name="txtCHRRAMSize" Grid.Row="5" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRRAMSize}" TextWrapping="NoWrap"/>
+            <TextBox x:Name="txtCHRRAMShiftCount" Grid.Row="5" Grid.Column="3" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRRAMShiftCount}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblCHRNVRAM" Grid.Row="6" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="CHR NVRAM:"/>
+            <TextBox x:Name="txtCHRNVRAMSize" Grid.Row="6" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRNVRAMSize}" TextWrapping="NoWrap"/>
+            <TextBox x:Name="txtCHRNVRAMShiftCount" Grid.Row="6" Grid.Column="3" Margin="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CHRNVRAMShiftCount}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblMirroringType" Grid.Row="7" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Mirroring:"/>
+            <ComboBox x:Name="cboMirroringType" Grid.Row="7" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding Mirroring}" SelectedValuePath="Value" DisplayMemberPath="Name"/>
+
+            <CheckBox x:Name="chkBattery" Content="Battery" Grid.Row="7" Grid.Column="3" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Battery}"/>
+            <CheckBox x:Name="chkTrainer" Content="Trainer" Grid.Row="8" Grid.Column="3" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding Trainer}"/>
+            <CheckBox x:Name="chkFourScreen" Content="Four Screen" Grid.Row="9" Grid.Column="3" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding FourScreen}" />
+
+            <Label x:Name="lblConsoleType" Grid.Row="8" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Console Type:"/>
+            <ComboBox x:Name="cboConsoleType" Grid.Row="8" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding ConsoleType}" SelectedValuePath="Value" DisplayMemberPath="Name"/>
+
+            <Label x:Name="lblMapper" Grid.Row="9" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Mapper:"/>
+            <TextBox x:Name="txtMapper" Grid.Row="9" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding Mapper}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblSubMapper" Grid.Row="10" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center"  Content="SubMapper:"/>
+            <TextBox x:Name="txtSubMapper" Grid.Row="10" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding SubMapper}" TextWrapping="NoWrap"/>
+
+            <Label x:Name="lblCPUPPUTiming" Grid.Row="11" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="CPU/PPU Timing:"/>
+            <ComboBox x:Name="cboCPUPPUTiming" Grid.Row="11" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding CPUPPUTiming}" SelectedValuePath="Value" DisplayMemberPath="Name"/>
+
+            <Label x:Name="lblVsPPUType" Grid.Row="12" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Vs. PPU Type:"/>
+            <ComboBox x:Name="cboVsPPUType" Grid.Row="12" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="" SelectedValuePath="Value" DisplayMemberPath="Name"/>
+
+            <Label x:Name="lblVsHardwareType" Grid.Row="13" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Vs. Hardware Type:"/>
+            <ComboBox x:Name="cboVsHardwareType" Grid.Row="13" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="" SelectedValuePath="Value" DisplayMemberPath="Name"/>
+
+            <Label x:Name="lblExtendedConsoleType" Grid.Row="14" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Extended Console Type:"/>
+            <ComboBox x:Name="cboExtendedConsoleType" Grid.Row="14" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="" SelectedValuePath="Value" DisplayMemberPath="Name"/>
+
+            <Label x:Name="lblDefaultExpansionDevice" Grid.Row="15" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Default Expansion Device:"/>
+            <ComboBox x:Name="cboDefaultExpansionDevice" Grid.Row="15" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectedValue="{Binding DefaultExpansionDevice}" SelectedValuePath="Value" DisplayMemberPath="Name"/>
+
+            <Label x:Name="lblHeaderBytes" Grid.Row="16" Grid.Column="1" Margin="0,5,10,5" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Header Bytes:"/>
+            <TextBox x:Name="txtHeaderBytes" Grid.Row="16" Grid.Column="2" Margin="0,5,0,5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding HeaderBytesAsString, Mode=OneWay}" IsTabStop="False" IsReadOnly="True" TextWrapping="NoWrap"/>
+        </Grid>
+        
+        <Grid Grid.Row="1" Grid.ColumnSpan="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnSelectROM" Content="_Select ROM" Grid.Column="0" Margin="5,10,5,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <Button x:Name="btnWriteHeader" Content="_Write Header" Grid.Column="1" Margin="5,10,5,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsEnabled="False" />
+            <Button x:Name="btnClose" Content="_Close" Grid.Column="3"  Margin="5,10,5,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        </Grid>
+    </Grid>
+</Window>
