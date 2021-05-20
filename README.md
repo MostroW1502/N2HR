@@ -17,3 +17,5 @@ On a test system it took about 30 seconds for 1210 files spread over 70+ folders
 This program requires .NET5.0 to be installed on the system where it's running from.
 
 If there are any issues or suggestions drop me a line and i'll have a look.
+
+The nes20db.xml data file can be found at: http://forums.nesdev.com/viewtopic.php?f=3&t=19940&p=248905&hilit=Ines+2+script#p248905
