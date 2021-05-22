@@ -16,6 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\NES20XML\NES20XML\NES20XML.csproj" />
+    <ProjectReference Include="..\..\..\NES20XML\NES20XML\NES20XML.csproj" />
   </ItemGroup>
 </Project>

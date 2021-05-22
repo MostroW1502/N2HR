@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NES20HeaderRepair", "NES20HeaderRepair\NES20HeaderRepair.csproj", "{0404FB6B-699C-49B3-BA8E-6494F2898F33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NES20XML", "..\NES20XML\NES20XML\NES20XML.csproj", "{FC7AC42A-C49B-4CFF-BFE8-6FD87CCF5CA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NES20XML", "..\..\NES20XML\NES20XML\NES20XML.csproj", "{593AFE6A-31C6-4C16-AE4B-863EDEB4AD89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{0404FB6B-699C-49B3-BA8E-6494F2898F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0404FB6B-699C-49B3-BA8E-6494F2898F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0404FB6B-699C-49B3-BA8E-6494F2898F33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FC7AC42A-C49B-4CFF-BFE8-6FD87CCF5CA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC7AC42A-C49B-4CFF-BFE8-6FD87CCF5CA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC7AC42A-C49B-4CFF-BFE8-6FD87CCF5CA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC7AC42A-C49B-4CFF-BFE8-6FD87CCF5CA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{593AFE6A-31C6-4C16-AE4B-863EDEB4AD89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{593AFE6A-31C6-4C16-AE4B-863EDEB4AD89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{593AFE6A-31C6-4C16-AE4B-863EDEB4AD89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{593AFE6A-31C6-4C16-AE4B-863EDEB4AD89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
