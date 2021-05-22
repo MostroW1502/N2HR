@@ -8,20 +8,21 @@ namespace NES20HeaderRepair.NESHeaderRepair.Helpers
     public class Settings : ApplicationSettingsBase, INotifyPropertyChanged
     {
         private readonly string workingfolder = $@"{Directory.GetCurrentDirectory()}\NES2\Working",
-                                defectfolder = $@"{Directory.GetCurrentDirectory()}\NES2\Defective";
+                                defectfolder = $@"{Directory.GetCurrentDirectory()}\NES2\Defective",
+                                unverifiedfolder = $@"{Directory.GetCurrentDirectory()}\NES2\Unverified";
 
         [UserScopedSetting()]
         public string WorkingFolder
         {
             get
             {
-                if (string.IsNullOrEmpty((string)this["WorkingFolder"])) this["WorkingFolder"] = workingfolder;
-                TryCreateOrDefault("WorkingFolder", workingfolder);
-                return (string)this["WorkingFolder"];
+                if (string.IsNullOrEmpty((string)this[nameof(WorkingFolder)])) this[nameof(WorkingFolder)] = workingfolder;
+                TryCreateOrDefault(nameof(WorkingFolder), workingfolder);
+                return (string)this[nameof(WorkingFolder)];
             }
             set
             {
-                this["WorkingFolder"] = Directory.Exists(value) ? value : workingfolder;
+                this[nameof(WorkingFolder)] = Directory.Exists(value) ? value : workingfolder;
             }
         }
 
@@ -30,13 +31,28 @@ namespace NES20HeaderRepair.NESHeaderRepair.Helpers
         {
             get
             {
-                if (string.IsNullOrEmpty((string)this["DefectFolder"])) this["DefectFolder"] = defectfolder;
-                TryCreateOrDefault("DefectFolder", defectfolder);
-                return (string)this["DefectFolder"];
+                if (string.IsNullOrEmpty((string)this[nameof(DefectFolder)])) this[nameof(DefectFolder)] = defectfolder;
+                TryCreateOrDefault(nameof(DefectFolder), defectfolder);
+                return (string)this[nameof(DefectFolder)];
             }
             set
             {
-                this["DefectFolder"] = Directory.Exists(value) ? value : defectfolder;
+                this[nameof(DefectFolder)] = Directory.Exists(value) ? value : defectfolder;
+            }
+        }
+
+        [UserScopedSetting()]
+        public string UnverifiedFolder
+        {
+            get
+            {
+                if (string.IsNullOrEmpty((string)this[nameof(UnverifiedFolder)])) this[nameof(UnverifiedFolder)] = unverifiedfolder;
+                TryCreateOrDefault(nameof(UnverifiedFolder), unverifiedfolder);
+                return (string)this[nameof(UnverifiedFolder)];
+            }
+            set
+            {
+                this[nameof(UnverifiedFolder)] = Directory.Exists(value) ? value : unverifiedfolder;
             }
         }
 
@@ -46,11 +62,11 @@ namespace NES20HeaderRepair.NESHeaderRepair.Helpers
         {
             get
             {
-                return (bool)this["PreserveFolderStructure"];
+                return (bool)this[nameof(PreserveFolderStructure)];
             }
             set
             {
-                this["PreserveFolderStructure"] = value;
+                this[nameof(PreserveFolderStructure)] = value;
             }
         }
 

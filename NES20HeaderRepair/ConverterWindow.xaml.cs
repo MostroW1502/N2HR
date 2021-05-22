@@ -131,12 +131,17 @@ namespace NES20HeaderRepair
 
                         if (a && b)
                         {
-                            if (Headers[h].FileSizeMatchesHeader && Headers[h].ROMTYPE == FORMAT.NES20)
+                            if (Headers[h].ROMTYPE == FORMAT.NES20)
                                 await new NES2Header(Games[g], s).CopyToWorkingFolder(Headers[h].FileName);
                             else
                                 await new NES2Header(Games[g], s).WriteHeaderAsync(Headers[h].FileName);
 
                             break;
+                        }
+
+                        if (g == Games.Count - 1)
+                        {
+                            await new NES2Header(Games[g], s).CopyToUnverifiedFolder(Headers[h].FileName);
                         }
                     }
                 }

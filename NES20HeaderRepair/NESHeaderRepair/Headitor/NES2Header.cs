@@ -558,9 +558,9 @@ namespace NES20HeaderRepair.NESHeaderRepair
 
                     return true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    throw (e);
+                    throw;
                 }
             });
         }
@@ -581,6 +581,14 @@ namespace NES20HeaderRepair.NESHeaderRepair
             });
         }
 
+        public Task CopyToUnverifiedFolder(string FileName)
+        {
+            return Task.Run(() =>
+            {
+                if (File.Exists(FileName)) File.Copy(FileName, UnverifiedFile(FileName), true);
+            });
+        }
+
         public Task<bool> LoadHeaderAsync(string FileName)
         {
             return Task.Run(() =>
@@ -590,9 +598,9 @@ namespace NES20HeaderRepair.NESHeaderRepair
                     new FileStream(FileName, FileMode.Open).Read(header, 0, 16);
                     return true;
                 }
-                catch(Exception e)
+                catch(Exception)
                 {
-                    throw (e);
+                    throw;
                 }
             });
         }
@@ -606,8 +614,7 @@ namespace NES20HeaderRepair.NESHeaderRepair
                 if (!Directory.Exists(newdir)) Directory.CreateDirectory(newdir);
                 return $@"{newdir}\{Path.GetFileName(FileName)}";
             }
-            else
-                return $@"{s.WorkingFolder}\{Path.GetFileName(FileName)}";
+            else return $@"{s.WorkingFolder}\{Path.GetFileName(FileName)}";
         }
 
         private string DefectFile(string FileName)
@@ -619,8 +626,19 @@ namespace NES20HeaderRepair.NESHeaderRepair
                 if (!Directory.Exists(newdir)) Directory.CreateDirectory(newdir);
                 return $@"{newdir}\{Path.GetFileName(FileName)}";
             }
-            else
-                return $@"{s.DefectFolder}\{Path.GetFileName(FileName)}";
+            else return $@"{s.DefectFolder}\{Path.GetFileName(FileName)}";
+        }
+
+        private string UnverifiedFile(string FileName)
+        {
+            if (s.PreserveFolderStructure)
+            {
+                string newdir = $@"{s.UnverifiedFolder}\{new DirectoryInfo(Path.GetDirectoryName(FileName)).Name}";
+
+                if (!Directory.Exists(newdir)) Directory.CreateDirectory(newdir);
+                return $@"{newdir}\{Path.GetFileName(FileName)}";
+            }
+            else return $@"{s.UnverifiedFolder}\{Path.GetFileName(FileName)}";
         }
 
         void OnPropertyChanged([CallerMemberName] string PropertyName = null)
