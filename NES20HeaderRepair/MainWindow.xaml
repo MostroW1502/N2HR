@@ -1,0 +1,87 @@
+﻿<Window x:Class="NES20HeaderRepair.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NES20HeaderRepair"
+        mc:Ignorable="d"
+        Title="N2HR" Width="1280" Height="720">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition Width=".2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnROMFolder" 
+                    Grid.Column="0"
+                    Content="_ROM Folder" 
+                    Margin="10"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"/>
+
+            <Button x:Name="btnXMLFile" 
+                    Grid.Column="1"
+                    Content="_XML DataFile" 
+                    Margin="10"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"/>
+
+            <Button x:Name="btnConvertHeaders" 
+                    Grid.Column="2"
+                    Content="_Convert Headers" 
+                    Margin="10"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    IsEnabled="False"/>
+
+            <Button x:Name="btnSettings" 
+                    Grid.Column="4"
+                    Content="_Settings" 
+                    Margin="10"
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    IsEnabled="True"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".75*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid Grid.Column="0" Name="FileDataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Header Type" Width="Auto" MaxWidth="100" Binding="{Binding ROMTYPE}"/>
+                    <DataGridTextColumn Header="FileSize" Width="Auto" MaxWidth="100" Binding="{Binding FileSizeOnDisk}"/>
+                    <DataGridTextColumn Header="Size OK" Width="Auto" MaxWidth="100" Binding="{Binding FileSizeMatchesHeader}"/>
+                    <DataGridTextColumn Header="FileName" Width="*" Binding="{Binding FriendlyFileName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <DataGrid Grid.Column="1" Name="ROMEntryDataGrid" ItemsSource="{Binding}" AutoGenerateColumns="False" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ROM Size:" Width="Auto"  Binding="{Binding ROM.Size}"/>
+                    <DataGridTextColumn Header="ROM CRC32:" Width="Auto" Binding="{Binding ROM.CRC32AsString}"/>
+                    <DataGridTextColumn Header="ROM SHA1:" Width="Auto" Binding="{Binding ROM.SHA1AsString}"/>
+                    <DataGridTextColumn Header="PRG Size:" Width="Auto" Binding="{Binding PRGROM.Size}"/>
+                    <DataGridTextColumn Header="PRG CRC32:" Width="Auto" Binding="{Binding PRGROM.CRC32AsString}"/>
+                    <DataGridTextColumn Header="PRG SHA1:" Width="Auto" Binding="{Binding PRGROM.SHA1AsString}"/>
+                    <DataGridTextColumn Header="PRG SUM16:" Width="Auto" Binding="{Binding PRGROM.SUM16AsString}"/>
+                    <DataGridTextColumn Header="CHR Size:" Width="Auto" Binding="{Binding CHRROM.Size}"/>
+                    <DataGridTextColumn Header="CHR CRC32:" Width="Auto" Binding="{Binding CHRROM.CRC32AsString}"/>
+                    <DataGridTextColumn Header="CHR SHA1:" Width="Auto" Binding="{Binding CHRROM.SHA1AsString}"/>
+                    <DataGridTextColumn Header="CHR SUM16:" Width="Auto" Binding="{Binding CHRROM.SUM16AsString}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Window>

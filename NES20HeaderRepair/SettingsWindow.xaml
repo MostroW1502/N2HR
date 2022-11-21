@@ -1,0 +1,40 @@
+﻿<Window x:Class="NES20HeaderRepair.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NES20HeaderRepair"
+        mc:Ignorable="d"
+        Title="Settings" 
+        Height="200" 
+        Width="800"
+        WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="lblWorkingFolder" Grid.Row="0" Grid.Column="0" Content="Working ROMS Folder:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtWorkingFolder" Grid.Row="0" Grid.Column="1" Text="{Binding WorkingFolder}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="NoWrap"/>
+        <Button x:Name="btnPickWorkingFolder" Content="_Working Folder" Grid.Row="0" Grid.Column="2" Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+        
+        <Label x:Name="lblDefectFolder" Grid.Row="1" Grid.Column="0" Content="Defect ROMS Folder:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtDefectFolder" Grid.Row="1" Grid.Column="1" Text="{Binding DefectFolder}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="NoWrap"/>
+        <Button x:Name="btnPickDefectFolder" Content="_Defect Folder" Grid.Row="1" Grid.Column="2" Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+
+        <Label x:Name="lblUnverifiedFolder" Grid.Row="2" Grid.Column="0" Content="Unverified ROMS Folder:" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="txtUnverifiedFolder" Grid.Row="2" Grid.Column="1" Text="{Binding UnverifiedFolder}"  HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="NoWrap"/>
+        <Button x:Name="btnPickUnverifiedFolder" Content="_Unverified Folder" Grid.Row="2" Grid.Column="2" Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+
+        <CheckBox x:Name="chkKeepFolderStructure" Content="Preserve Folder Structure" Grid.Row="3" IsChecked="{Binding PreserveFolderStructure}" HorizontalAlignment="Center" VerticalAlignment="Center" FlowDirection="RightToLeft"/>
+        <Button x:Name="btnClose" Content="_Close" Grid.Row="3" Grid.Column="1" Padding="10,5,10,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
